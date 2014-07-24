@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.ltux.sandbox</groupId>
+        <artifactId>graniteds.sample</artifactId>
+        <version>1</version>
+    </parent>
+
+    <artifactId>graniteds.sample.server-ejb</artifactId>
+    <packaging>war</packaging>
+
+    <properties>
+        <app.name>data</app.name>
+        <tomee.version>1.6.0</tomee.version>
+        <hibernate.core.version>4.2.11.Final</hibernate.core.version>
+    </properties>
+
+    <build>
+        <finalName>${app.name}</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.openejb.maven</groupId>
+                <artifactId>tomee-maven-plugin</artifactId>
+                <version>1.6.0.1</version>
+                <configuration>
+                    <finalName>${app.name}</finalName>
+                    <removeTomeeWebapp>true</removeTomeeWebapp>
+                    <tomeeVersion>1.6.0.1</tomeeVersion>
+                    <libs>
+                        <lib>org.hibernate:hibernate-validator:4.2.0.Final</lib>
+                        <lib>org.hibernate:hibernate-entitymanager:4.1.12.Final</lib>
+                        <lib>org.hibernate:hibernate-core:4.1.12.Final</lib>
+                        <lib>org.hibernate.common:hibernate-commons-annotations:4.0.1.Final</lib>
+                        <lib>org.jboss.logging:jboss-logging:3.1.0.GA</lib>
+                        <lib>org.javassist:javassist:3.15.0-GA</lib>
+                        <lib>dom4j:dom4j:1.6.1</lib>
+                        <lib>antlr:antlr:2.7.7</lib>
+                        <lib>remove:asm</lib>
+                        <lib>remove:bval-core</lib>
+                        <lib>remove:bval-jsr303</lib>
+                        <lib>remove:commons-lang-2.6</lib>
+                        <lib>remove:openjpa</lib>
+                        <lib>remove:serp</lib>
+                    </libs>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!--        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>7.0</version>
+            <scope>provided</scope>
+        </dependency>-->
+
+        <dependency>
+            <groupId>org.apache.openejb</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>6.0-5</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>graniteds.sample.server-model</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.graniteds</groupId>
+            <artifactId>granite-server</artifactId>
+            <version>${graniteds.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.graniteds</groupId>
+            <artifactId>granite-server-ejb</artifactId>
+            <version>${graniteds.version}</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
