@@ -42,10 +42,6 @@ public class Generator {
                 account.add(new Box("B" + j + "atA" + account.getId()));
             }
         }
-
-        EntityManagerFactory emf = (EntityManagerFactory) sc.lookup("java:global/data/EntityManagerSupporter");
-        EntityManager em = emf.createEntityManager();
-        System.out.println("IS found : " + emf);
     }
 
 }

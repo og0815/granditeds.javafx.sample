@@ -5,7 +5,7 @@ import org.granite.gravity.config.servlet3.MessagingDestination;
 import org.granite.tide.ejb.EjbConfigProvider;
 
 // tag::server-filter[]
-@ServerFilter(configProviderClass = EjbConfigProvider.class, entityManagerFactoryJndiName = "java:global/data/EntityManagerSupporter"
+@ServerFilter(configProviderClass = EjbConfigProvider.class
 /*, amf3MessageInterceptor = OutInterceptor.class*/) // <1>
 public class DataApplication {
 

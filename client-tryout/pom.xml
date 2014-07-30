@@ -204,6 +204,13 @@
         </dependency>
 
         <dependency>
+            <groupId>org.graniteds</groupId>
+            <artifactId>granite-client-javafx-advanced</artifactId>
+            <version>${graniteds.version}</version>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpasyncclient</artifactId>
             <version>4.0.1</version>
